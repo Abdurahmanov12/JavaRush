@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "567103569699",
+    "project_id": "javarush-fcecc",
+    "storage_bucket": "javarush-fcecc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567103569699:android:39208f99c51646ea165696",
+        "android_client_info": {
+          "package_name": "com.example.javarush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567103569699-fe1ijbiq1ef6ahcju8dfj8bef4igk8ig.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.javarush",
+            "certificate_hash": "85d149ac0f72088ec67a71a74a3172231c7a5fcc"
+          }
+        },
+        {
+          "client_id": "567103569699-p96k4n1unlism732usd785d7t6278tgi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANrEm8iTRNBOljA8VhbF5k_fTYHRnHf9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567103569699-p96k4n1unlism732usd785d7t6278tgi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
