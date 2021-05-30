@@ -9,27 +9,16 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
 
 public class MapActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-    private VipeigerAdapter adapter;
-    private ViewPager2 viewPager2;
-    private TabLayout tabLayout;
-    private ArrayList<Fragment> list;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        initNitViewPager();
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -50,6 +39,8 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
 
         NavigationView navigationView1 = findViewById(R.id.nav_view);
         navigationView1.setItemIconTintList(null);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,new Home());
     }
 
 
@@ -110,8 +101,6 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)){
@@ -119,14 +108,5 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
         }else {
             super.onBackPressed();
         }
-    }
-    private void initNitViewPager(){
-        viewPager2 = findViewById(R.id.viewPager);
-        adapter = new VipeigerAdapter(this);
-        list = new ArrayList<>();
-        list.add(new FirstFragment());
-        list.add(new SeccondFragment());
-        adapter.addFragments(list);
-        viewPager2.setAdapter(adapter);
     }
 }

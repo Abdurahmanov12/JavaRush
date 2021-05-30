@@ -31,14 +31,10 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference users;
     RelativeLayout root;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         btnSignIn = findViewById(R.id.btnSignIn);
         btnRegister = findViewById(R.id.btnRegister);
@@ -61,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 showSignInWindow();
             }
         });
-
-
     }
 
     private void showSignInWindow(){
@@ -114,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         });
         dialog.show();
     }
-
-
 
     private void showRegisterWindow(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);

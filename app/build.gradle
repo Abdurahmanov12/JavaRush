@@ -49,5 +49,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:30.0.0'
     implementation 'com.android.support:design:30.0.0'
 
+    implementation 'com.firebaseui:firebase-ui-database:6.4.0'
+
 }
 apply plugin: 'com.google.gms.google-services'
