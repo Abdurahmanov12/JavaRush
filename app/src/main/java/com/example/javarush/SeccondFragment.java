@@ -21,19 +21,20 @@ public class SeccondFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        list.add(new Model(R.drawable.asdq,"Задача 1","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 2","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 3","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 4","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 5","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача6","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 7","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 8","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 9","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 10","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 11","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 12","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Задача 13","Описание","17.01.21"));
+
+        list.add(new Model(R.drawable.asdq,"Задача 1","Ввод и Ввывод","17.01.21"));
+        list.add(new Model(R.drawable.cat, "Задача 2","Выведите","17.01.21"));
+        list.add(new Model(R.drawable.original, "Задача 3","Объявляем переменные","17.01.21"));
+        list.add(new Model(R.drawable.quest, "Задача 4","Выводим квадрат числа","17.01.21"));
+        list.add(new Model(R.drawable.raunt, "Задача 5","Описание","17.01.21"));
+        list.add(new Model(R.drawable.cat, "Задача6","Описание","17.01.21"));
+        list.add(new Model(R.drawable.original, "Задача 7","Описание","17.01.21"));
+        list.add(new Model(R.drawable.quest, "Задача 8","Описание","17.01.21"));
+        list.add(new Model(R.drawable.raunt, "Задача 9","Описание","17.01.21"));
+        list.add(new Model(R.drawable.quest, "Задача 10","Описание","17.01.21"));
+        list.add(new Model(R.drawable.cat, "Задача 11","Описание","17.01.21"));
+        list.add(new Model(R.drawable.original, "Задача 12","Описание","17.01.21"));
+        list.add(new Model(R.drawable.quest, "Задача 13","Описание","17.01.21"));
         list.add(new Model(R.drawable.asdq, "Задача 14","Описание","17.01.21"));
 
         initRecycler(view);

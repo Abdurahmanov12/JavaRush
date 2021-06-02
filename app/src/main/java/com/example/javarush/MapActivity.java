@@ -1,7 +1,9 @@
 package com.example.javarush;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -11,9 +13,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MapActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = null;
     private DrawerLayout drawer;
+    private FirebaseAuth firebaseAuth;
+    Button btnRegister, btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +28,6 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_map);
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -36,13 +42,10 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
                     new Home()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
-
         NavigationView navigationView1 = findViewById(R.id.nav_view);
         navigationView1.setItemIconTintList(null);
-
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,new Home());
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -84,16 +87,31 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.nav_setting:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SettingActivity()).commit();
+                        new SettingsActivity.SettingsFragment()).commit();
                 Toast.makeText(this, "Настройка", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_share:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String sharebody = "look all Programmings";
+                String subject = "http://www.youtube.com/avadhtutor/playlists/";
+                intent.putExtra(Intent.EXTRA_SUBJECT, sharebody);
+                intent.putExtra(Intent.EXTRA_TEXT, subject);
+                startActivity(Intent.createChooser(intent,"AVADH TUTOR"));
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_send:
-                Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.nav_logout:
+                btnSignIn = findViewById(R.id.emailField);
+                firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.signOut();
+
+                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                if (firebaseUser != null){
+                    btnSignIn.setText(firebaseUser.getEmail());
+                }else {
+                    startActivity(new Intent(this,MainActivity.class));
+                    finish();
+                }
                 Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
                 break;
         }

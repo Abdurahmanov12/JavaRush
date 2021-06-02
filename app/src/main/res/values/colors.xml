@@ -15,5 +15,9 @@
     <color name="btn_register_stroke">#530C0C</color>
     <color name="colorAccent">#E54F78</color>
     <color name="colorPrimary">#504FE5</color>
-    <color name="colorPurple">#7B0087</color>
+    <color name="colorPurple">#D793BD</color>
+    <color name="primaryDark">#292b3d</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
 </resources>

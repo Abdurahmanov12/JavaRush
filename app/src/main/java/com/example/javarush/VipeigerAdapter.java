@@ -19,7 +19,6 @@ public class VipeigerAdapter extends FragmentStateAdapter {
         super(fragmentActivity);
     }
 
-    @NonNull
     @Override
     public Fragment createFragment(int position) {
         return list.get(position);

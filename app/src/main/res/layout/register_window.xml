@@ -40,11 +40,9 @@
             android:textColor="@color/purple_200"
             android:textColorHint="@color/design_default_color_primary_dark"
             android:textSize="20sp"
-
             app:met_floatingLabel="highlight"
             app:met_baseColor="#0056d3"
             app:met_primaryColor="#982360"
-
             app:met_singleLineEllipsis="true"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -74,11 +72,9 @@
             android:textColor="@color/purple_200"
             android:textColorHint="@color/design_default_color_primary_dark"
             android:textSize="20sp"
-
             app:met_floatingLabel="highlight"
             app:met_baseColor="#0056d3"
             app:met_primaryColor="#982360"
-
             app:met_singleLineEllipsis="true"/>
 
     </LinearLayout>

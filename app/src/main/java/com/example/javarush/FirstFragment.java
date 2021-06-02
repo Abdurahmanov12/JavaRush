@@ -6,53 +6,61 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class FirstFragment extends Fragment {
 
     RecyclerView rv;
     Adapter adapter;
+    TabLayout tabLayout;
+    FragmentAdapter adapter2;
+    ViewPager2 viewPager2;
     ArrayList<Model> list = new ArrayList<>();
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Calendar date = null;
-        list.add(new Model(R.drawable.asdq,"Знакомства","Уровень 0","17.01.21"));
-        list.add(new Model(R.drawable.zapp, "Лекция 1","Уровень 1","17.01.21"));
-        list.add(new Model(R.drawable.risha, "лекция 2","Уровень 2","17.01.21"));
-        list.add(new Model(R.drawable.elly, "Лекция 3","Уровень 3","17.01.21"));
-        list.add(new Model(R.drawable.julio, "Лекция 4","Уровень 4","17.01.21"));
-        list.add(new Model(R.drawable.diego, "Лекция 5","Уровень 5","17.01.21"));
-        list.add(new Model(R.drawable.raunt, "Лекция 6","Уровень 6","17.01.21"));
-        list.add(new Model(R.drawable.cat, "Лекция 7","Уровень 7","17.01.21"));
-        list.add(new Model(R.drawable.quest, "Лекция 8","Уровень 8","17.01.21"));
-        list.add(new Model(R.drawable.professor, "Лекция 9","Уровень 9","17.01.21"));
-        list.add(new Model(R.drawable.kim, "Лекция 10","Уровень 10","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Загаловок","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Загаловок","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Загаловок","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Загаловок","Описание","17.01.21"));
-        list.add(new Model(R.drawable.asdq, "Загаловок","Описание","17.01.21"));
+        list.add(new Model(R.drawable.zapp,"Знакомства","Что такое java","17.01.21"));
+        list.add(new Model(R.drawable.risha, "Лекция 1","Переменные","17.01.21"));
+        list.add(new Model(R.drawable.elly, "Лекция 2","Данные от пользователя","17.01.21"));
+        list.add(new Model(R.drawable.julio, "Лекция 3","Математические операции","17.01.21"));
+        list.add(new Model(R.drawable.diego, "Лекция 4","Условные операторы","17.01.21"));
+        list.add(new Model(R.drawable.kim, "Лекция 5","Циклы (For,While,Do while","17.01.21"));
+        list.add(new Model(R.drawable.professor, "Лекция 6","Массивы","17.01.21"));
+        list.add(new Model(R.drawable.zoidberg, "Лекция 7","Многомерные массивы","17.01.21"));
+        list.add(new Model(R.drawable.julio, "Лекция 8","Функции","17.01.21"));
+        list.add(new Model(R.drawable.elly, "Лекция 9","Основы ООП","17.01.21"));
+        list.add(new Model(R.drawable.diego, "Лекция 10","Создание класса и объекта","17.01.21"));
+        list.add(new Model(R.drawable.kim, "Лекция 11","Конструкторы","17.01.21"));
+        list.add(new Model(R.drawable.risha, "Лекция 12","Наследование","17.01.21"));
+        list.add(new Model(R.drawable.professor, "Лекция 13","Полиморфизм","17.01.21"));
+        list.add(new Model(R.drawable.julio, "Лекция 14","Анонимные классы","17.01.21"));
+        list.add(new Model(R.drawable.zapp, "Лекция 15","Абстрактные классы","17.01.21"));
 
         initRecycler(view);
+
     }
 
+    private FragmentManager getSupportManager() {
+        return null;
+    }
     private void initRecycler(View view) {
+//        tabLayout = view.findViewById(R.id.tab_layout);
+//        viewPager2 = view.findViewById(R.id.view_pager2);
         rv = view.findViewById(R.id.recycler);
         adapter = new Adapter();
         adapter.setData(list);
         rv.setAdapter(adapter);
     }
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_first, container, false);
     }
 }
