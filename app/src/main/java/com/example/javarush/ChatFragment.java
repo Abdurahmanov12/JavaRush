@@ -19,7 +19,6 @@ public class ChatFragment extends Fragment {
         //пользователь еще не авторизаван
 //        if (FirebaseAuth.getInstance().getCurrentUser() == null){
 //            startActivityForResult(AuthUI.getInstans());
-//
 //        }
     }
 }

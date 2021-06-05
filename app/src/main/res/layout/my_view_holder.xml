@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:interpolator="@android:anim/linear_interpolator"
     android:layout_height="88dp"
     android:id="@+id/text_v"
     xmlns:app="http://schemas.android.com/apk/res-auto">

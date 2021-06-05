@@ -11,11 +11,17 @@ import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<MainViewHolder> {
     private ArrayList<Model> data = new ArrayList<>();
+    private OnItemClick onItemClick;
 
     void setData(ArrayList<Model> data){
         this.data.addAll(data);
         notifyDataSetChanged();
     }
+
+    public void setOnItemClick(OnItemClick onItemClick) {
+        this.onItemClick = onItemClick;
+    }
+
     @NonNull
     @Override
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -26,10 +32,14 @@ public class Adapter extends RecyclerView.Adapter<MainViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
         holder.onBind(data.get(position));
+        holder.itemView.setOnClickListener(v -> onItemClick.itemClick(data.get(position).getUrl()));
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+    public interface OnItemClick{
+        void itemClick(String url);
     }
 }
