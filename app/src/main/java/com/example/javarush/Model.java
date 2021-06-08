@@ -6,23 +6,13 @@ public class Model {
     private String description;
     private String date;
     private String url;
-    private int asd;
 
-    public Model(int id, String title, String description, String date,int asd) {
+    public Model(int id, String title, String description, String date, String url) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.date = date;
-        //this.url = url;
-        this.asd = asd;
-    }
-
-    public int getAsd() {
-        return asd;
-    }
-
-    public void setAsd(int asd) {
-        this.asd = asd;
+        this.url = url;
     }
 
     public String getUrl() {

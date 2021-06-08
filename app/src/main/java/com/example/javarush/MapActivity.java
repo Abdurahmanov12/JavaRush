@@ -60,6 +60,11 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
                         new ChatFragment()).commit();
                 Toast.makeText(this, "Чат", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.nav_create:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new TestFragment()).commit();
+                Toast.makeText(this, "Тесты", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
@@ -72,7 +77,7 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.nav_info:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new InfoActivity()).commit();
+                        new ZadachaFragment()).commit();
                 Toast.makeText(this, "Информация", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_notification:
@@ -80,11 +85,7 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
                         new NotificationActivity()).commit();
                 Toast.makeText(this, "Уведомления", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_collections:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CollectionsActivity()).commit();
-                Toast.makeText(this, "Закладки", Toast.LENGTH_SHORT).show();
-                break;
+
             case R.id.nav_setting:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new SettingsActivity.SettingsFragment()).commit();
